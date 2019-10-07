@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<div class="homepage">
+		<div class="slider">
+			<div class="cycle-slideshow" data-cycle-speed=1500 data-cycle-timeout=1500>
+				<img src="images/1.jpg">
+				<img src="images/2.jpg">
+				<img src="images/3.jpg">
+			</div>
+		</div>
+		<div class="info">
+			<div class="block">
+				<h1>Johnsom James</h1>
+				<h2>Freelance Photographer</h2>
+				<hr>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, rem cumque porro, voluptates, recusandae officiis, aliquam eius facere maiores a molestias ipsam suscipit ducimus. Quidem temporibus facilis nostrum obcaecati! Aperiam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+			<div class="block button_block">
+				<a href="#" class="button button_hire">Hire me</a>
+				<a href="#" class="button button_gallery">Show my Gallery</a>
+			</div>
+			<div class="block social_media_icon">
+				<p>Follow me on popular social media sites</p>
+				<a href="#"><i class="fab fa-facebook-square"></i></a>
+				<a href="#"><i class="fab fa-twitter-square"></i></a>
+				<a href="#"><i class="fab fa-google-plus-square"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="my_gallery">
+		<div class="control">
+			<span id="prev"><i class="fas fa-arrow-left"></i></span>
+			<span class="goto_home"><i class="fas fa-home"></i></span>
+			<span id="next"><i class="fas fa-arrow-right"></i></span>
+		</div>
+
+		<div class="gallery-slideshow">
+			<img src="images/gallery_image_1.jpg">
+			<img src="images/gallery_image_2.jpg">
+			<img src="images/gallery_image_3.jpg">
+		</div>
+	</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.cycle2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".button_gallery").click(function(){
+		$("body").css("background-color", "#0defe3");
+		$(".homepage").slideUp(1000);
+		$(".my_gallery").delay(500).slideDown(1000);
+	});
+	$(".goto_home").click(function(){
+		$(".my_gallery").slideUp(1000);
+		$(".homepage").delay(500).slideDown(1000);
+	});
+	$(".gallery-slideshow").cycle({
+		fx:     'scrollHorz', 
+	    prev:   '#prev', 
+	    next:   '#next', 
+	    timeout: 3000
+	});
+});
+</script>
+</body>
+</html>
